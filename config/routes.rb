@@ -1,7 +1,11 @@
 CdManager::Application.routes.draw do
+  resources :albums
+
   devise_for :users  
   
-  resources :artists
+  resources :artists do
+    resources :albums
+  end
   
   resources :users do
     resources :artists

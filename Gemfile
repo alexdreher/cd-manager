@@ -11,6 +11,7 @@ gem 'compass'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'paperclip'
 
 group :development, :test do    
   gem 'rspec-rails'

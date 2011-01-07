@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Artist:
+  = @album.artist_id
+%p
+  %b Title:
+  = @album.title
+%p
+  %b Released at:
+  = @album.released_at
+
+= link_to 'Edit', edit_album_path(@album)
+\|
+= link_to 'Back', albums_path

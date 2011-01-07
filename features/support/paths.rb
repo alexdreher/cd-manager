@@ -19,6 +19,9 @@ module NavigationHelpers
       
     when /the artist creation page for "(.*)"/
       new_user_artist_path(User.find_by_email($1))
+      
+    when /my artist page for "(.*)"/
+      artist_path(Artist.find_by_name($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

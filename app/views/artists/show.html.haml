@@ -10,6 +10,8 @@
   %b Description:
   = @artist.description
 
+= link_to 'New Album', new_artist_album_path(@artist)
+\|
 = link_to 'Edit', edit_artist_path(@artist)
 \|
 = link_to 'Back', artists_path
