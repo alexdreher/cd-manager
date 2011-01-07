@@ -10,6 +10,8 @@ gem 'haml-rails'
 gem 'compass'
 gem 'jquery-rails'
 
+gem 'devise'
+
 group :development, :test do    
   gem 'rspec-rails'
   gem 'capybara'
