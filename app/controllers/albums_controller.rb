@@ -4,7 +4,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.xml
   def index
-    @albums = Album.all
+    @albums = Album.order(:title)    
+    @albums = @albums.where(:artist_id => params[:artist_id]) if params[:artist_id]
 
     respond_to do |format|
       format.html # index.html.erb

@@ -5,3 +5,4 @@ tmp/**/*
 .DS_Store
 public/stylesheets/compiled/
 db/test.sqlite3-journal
+public/system/

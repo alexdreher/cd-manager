@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.xml
   def index
-    @artists = Artist.all
+    @artists = Artist.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb

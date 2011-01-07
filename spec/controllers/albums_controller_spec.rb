@@ -26,7 +26,16 @@ describe AlbumsController do
   describe "GET index" do
     it "assigns all albums as @albums" do
       Album.stub(:all) { [mock_album] }
+      Album.should_receive(:order).with(:title).and_return([mock_album])
       get :index
+      assigns(:albums).should eq([mock_album])
+    end
+    
+    it "assigns all artist albums as @albums" do
+      Album.stub(:all) { [mock_album] }
+      Album.should_receive(:order).with(:title).and_return(@albums = [mock_album])
+      @albums.should_receive(:where).with({:artist_id => 1}).and_return([mock_album])
+      get :index, :artist_id => 1
       assigns(:albums).should eq([mock_album])
     end
   end

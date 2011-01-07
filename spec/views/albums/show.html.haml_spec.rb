@@ -6,6 +6,10 @@ describe "albums/show.html.haml" do
       :artist_id => 1,
       :title => "Title"
     ))
+    
+    @album.tracks = assign(:track, [stub_model(Track,
+      :title => "Track title"
+    )])
   end
 
   it "renders attributes in <p>" do
@@ -14,5 +18,8 @@ describe "albums/show.html.haml" do
     rendered.should match(/1/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Title/)
+    assert_select('img[class=album_cover]')
+    
+    rendered.should match(/Track title/)
   end
 end

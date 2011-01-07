@@ -26,6 +26,7 @@ describe ArtistsController do
   describe "GET index" do
     it "assigns all artists as @artists" do
       Artist.stub(:all) { [mock_artist] }
+      Artist.should_receive(:order).with(:name).and_return([mock_artist])
       get :index
       assigns(:artists).should eq([mock_artist])
     end

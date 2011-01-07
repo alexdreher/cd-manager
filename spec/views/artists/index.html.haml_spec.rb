@@ -5,12 +5,12 @@ describe "artists/index.html.haml" do
     assign(:artists, [
       stub_model(Artist,
         :user_id => 1,
-        :name => "Name",
+        :name => "Name1",
         :description => "MyText"
       ),
       stub_model(Artist,
         :user_id => 1,
-        :name => "Name",
+        :name => "Name2",
         :description => "MyText"
       )
     ])
@@ -18,11 +18,8 @@ describe "artists/index.html.haml" do
 
   it "renders a list of artists" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    rendered.should match(/Name1/)
+    rendered.should match(/Name2/)
+    rendered.should match(/MyText/)
   end
 end

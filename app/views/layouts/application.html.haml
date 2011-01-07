@@ -21,7 +21,9 @@
           or 
           = link_to "Sign in", new_user_session_path
       #navigation
-        link | link | link
+        = link_to "Artists", artists_path
+        \|
+        = link_to "Albums", albums_path
     %hr.clear.space
     -if notice
       .success= notice

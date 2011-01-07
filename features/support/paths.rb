@@ -22,6 +22,16 @@ module NavigationHelpers
       
     when /my artist page for "(.*)"/
       artist_path(Artist.find_by_name($1))
+      
+    when /the artists list/
+      artists_path
+      
+    when /the albums list/
+      albums_path
+      
+    when /the album list of "(.*)"/
+      artist_albums_path(Artist.find_by_name($1))
+      #artist_path(Artist.find_by_name($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

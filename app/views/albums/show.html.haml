@@ -1,6 +1,9 @@
 %p#notice= notice
 
 %p
+  = image_tag @album.cover.url(:medium), :class => "album_cover"
+
+%p
   %b Artist:
   = @album.artist_id
 %p
@@ -8,7 +11,19 @@
   = @album.title
 %p
   %b Released at:
-  = @album.released_at
+  = @album.released_at  
+  
+%table#tracks
+  %thead
+    %tr
+      %th Title
+      %th Length/Duration
+
+  %tbody
+    - @album.tracks.each do |track|
+      %tr      
+        %td= track.title
+        %td= track.length
 
 = link_to 'Edit', edit_album_path(@album)
 \|
