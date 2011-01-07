@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @artist.user_id
+%p
+  %b Name:
+  = @artist.name
+%p
+  %b Description:
+  = @artist.description
+
+= link_to 'Edit', edit_artist_path(@artist)
+\|
+= link_to 'Back', artists_path

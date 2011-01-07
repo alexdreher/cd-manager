@@ -1,5 +1,11 @@
 CdManager::Application.routes.draw do
-  devise_for :users
+  devise_for :users  
+  
+  resources :artists
+  
+  resources :users do
+    resources :artists
+  end
 
   root :to => "welcome#index"
 
