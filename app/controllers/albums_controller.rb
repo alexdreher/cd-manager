@@ -27,6 +27,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new.xml
   def new
     @album = Album.new
+    3.times { @album.tracks.build }
 
     respond_to do |format|
       format.html # new.html.erb

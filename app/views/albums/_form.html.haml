@@ -22,5 +22,16 @@
     = f.label :cover
     %br/
     = f.file_field :cover
+    
+  = f.fields_for :tracks do |t|
+    .field
+      = t.label :title, "Track title"
+      %br/
+      = t.text_field :title
+    .field
+      = t.label :length, "Track length"
+      %br/
+      = t.text_field :length
+      
   .actions
     = f.submit

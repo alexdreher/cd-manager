@@ -40,4 +40,8 @@ describe Album do
   it "should belong to a user" do
     @album.should respond_to(:user)
   end
+  
+  it "should respond to tracks" do
+    @album.should respond_to(:tracks)
+  end
 end

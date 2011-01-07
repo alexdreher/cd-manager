@@ -1,4 +1,6 @@
 CdManager::Application.routes.draw do
+  resources :tracks
+
   resources :albums
 
   devise_for :users  
