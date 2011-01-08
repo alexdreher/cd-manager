@@ -2,23 +2,26 @@ require 'spec_helper'
 
 describe "albums/index.html.haml" do
   before(:each) do
+    artist = stub_model(Artist,
+      :name => "Artist name"
+    )    
+    
     assign(:albums, [
       stub_model(Album,
-        :artist_id => 1,
-        :title => "Title"
+        :artist => artist,
+        :title => "Album 1"
       ),
       stub_model(Album,
-        :artist_id => 1,
-        :title => "Title"
+        :artist => artist,
+        :title => "Album 2"
       )
     ])
   end
 
-  it "renders a list of albums" do
+  it "renders a list of albums with artist name" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    rendered.should match(/Album 1/)
+    rendered.should match(/Album 2/)
+    rendered.should match(/Artist name/)
   end
 end
