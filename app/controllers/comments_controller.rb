@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to(@comment.commentable, :notice => 'Comment was successfully created.') }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to root_path }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end

@@ -37,7 +37,7 @@ describe Album do
     @album.should respond_to(:artist)
   end
 
-  it "should belong to a user" do
+  it "should respond to a user" do
     @album.should respond_to(:user)
   end
   

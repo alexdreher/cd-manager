@@ -6,3 +6,5 @@ tmp/**/*
 public/stylesheets/compiled/
 db/test.sqlite3-journal
 public/system/
+coverage.data
+coverage/

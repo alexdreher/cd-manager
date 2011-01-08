@@ -40,6 +40,14 @@ describe CommentsController do
         response.should redirect_to(comment_url(mock_comment))
       end
     end
+    
+    describe "with invalid params" do
+      it "redirects to the home page" do
+        Comment.stub(:new) { mock_comment(:save => false) }
+        post :create, :comment => {}
+        response.should redirect_to(root_url)
+      end
+    end
   end
 
   describe "DELETE destroy" do
