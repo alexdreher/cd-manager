@@ -17,6 +17,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.xml
   def show
     @album = Album.find(params[:id])
+    @comment = Comment.new(:commentable_id => @album.id, :commentable_type => "Album")
 
     respond_to do |format|
       format.html # show.html.erb

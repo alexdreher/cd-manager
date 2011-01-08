@@ -1,4 +1,6 @@
 CdManager::Application.routes.draw do
+  resources :comments
+
   resources :tracks
 
   resources :albums

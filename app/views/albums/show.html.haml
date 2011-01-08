@@ -5,7 +5,7 @@
 
 %p
   %b Artist:
-  = @album.artist_id
+  = @album.artist.name
 %p
   %b Title:
   = @album.title
@@ -24,6 +24,20 @@
       %tr      
         %td= track.title
         %td= track.length
+   
+%h2 Comments     
+#comments
+  - @album.comments.each do |comment|
+    %p= comment.text
+  %hr/
+  = form_for @album.comments.build do |f|
+    = f.hidden_field :commentable_id, :value => @album.id
+    = f.hidden_field :commentable_type, :value => "Album"
+    = f.label :text, "Comment text"
+    %br/
+    = f.text_area :text
+    .actions
+      = f.submit
 
 = link_to 'Edit', edit_album_path(@album)
 \|

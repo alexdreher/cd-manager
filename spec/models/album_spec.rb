@@ -44,4 +44,8 @@ describe Album do
   it "should respond to tracks" do
     @album.should respond_to(:tracks)
   end
+  
+  it "should respond to comments" do
+    @album.should respond_to(:comments)
+  end
 end

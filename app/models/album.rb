@@ -1,6 +1,7 @@
 class Album < ActiveRecord::Base
   belongs_to :artist
   has_many :tracks
+  has_many :comments, :as => :commentable
   
   validates :title, :presence => true
   validates :artist_id, :presence => true
