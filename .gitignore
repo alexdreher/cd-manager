@@ -9,3 +9,4 @@ public/system/
 coverage.data
 coverage/
 db/sphinx/
+config/database.yml
