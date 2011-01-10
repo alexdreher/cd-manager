@@ -25,7 +25,7 @@ describe "albums/show.html.haml" do
         stub_model(Comment, :text => "Comment two")
       ]
     )
-    
+    view.controller.stub!(:current_user).and_return(false)
     render
   end
 
