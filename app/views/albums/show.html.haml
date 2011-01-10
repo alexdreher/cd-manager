@@ -1,17 +1,10 @@
-%p#notice= notice
-
-%p
+.album
   = image_tag @album.cover.url(:medium), :class => "album_cover"
-
-%p
-  %b Artist:
-  = @album.artist.name
-%p
-  %b Title:
-  = @album.title
-%p
-  %b Released at:
-  = @album.released_at  
+  .content
+    %strong= @album.title
+    %br/
+    %p= "by #{@album.artist.name}"
+    %p= "Released at: #{@album.released_at}"
   
 %table#tracks
   %thead
@@ -39,6 +32,6 @@
     .actions
       = f.submit
 
-= link_to 'Edit', edit_album_path(@album)
-\|
 = link_to 'Back', albums_path
+\|
+= link_to 'Edit', edit_album_path(@album) if @album.user == current_user

@@ -7,7 +7,7 @@ class Album < ActiveRecord::Base
   validates :title, :presence => true
   validates :artist_id, :presence => true
   
-  has_attached_file :cover, :styles => { :medium => "200x200#", :thumb => "50x50#" }
+  has_attached_file :cover, :styles => { :medium => "150x150#", :thumb => "72x72#" }
   
   accepts_nested_attributes_for :tracks, :reject_if => :all_blank
   

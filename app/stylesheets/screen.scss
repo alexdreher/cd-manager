@@ -64,6 +64,17 @@ body.two-col {
       @include column(4);
     }
   }
+  
+  .album {
+    @include column($blueprint-grid-columns);
+    .album_cover {
+     @include column(4);
+     border: 1px solid black;
+    }
+    .content {
+      @include column(6, true);
+    }
+  }
 
   .left {
     @include column($blueprint-grid-columns/2);

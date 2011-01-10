@@ -1,13 +1,8 @@
-%p#notice= notice
-
 %p
-  %b User:
-  = @artist.user_id
-%p
-  %b Name:
+  %strong Name:
   = @artist.name
 %p
-  %b Description:
+  %strong Description:
   = @artist.description
 
 = link_to 'New Album', new_artist_album_path(@artist)
