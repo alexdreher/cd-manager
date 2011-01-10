@@ -17,4 +17,8 @@ describe "layouts/application.html.haml" do
   it "should display a link to albums list" do 
     assert_select('a[href=/albums]')
   end
+  
+  it "should display a search field" do
+    assert_select("input#search")
+  end
 end

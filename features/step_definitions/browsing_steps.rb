@@ -1,18 +1,6 @@
-Given /^the following artist records$/ do |table|
+Given /^the following (\w.+) records$/ do |model, table|  
   table.hashes.each do |hash|
-    Artist.new(hash).save!
-  end
-end
-
-Given /^the following album records$/ do |table|
-  table.hashes.each do |hash|
-    Album.new(hash).save!
-  end
-end
-
-Given /^the following track records$/ do |table|
-  table.hashes.each do |hash|
-    Track.new(hash).save!
+    Factory(model, hash)
   end
 end
 

@@ -26,7 +26,9 @@
           \|
           = link_to "Albums", albums_path
         #search-form
-          search here
+          = form_for :search, :url => search_path, :html => {:method => :get} do |f|
+            = text_field_tag :search
+            = f.submit "Search"
       %hr.clear.space
       -if notice
         .success= notice

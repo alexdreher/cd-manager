@@ -1,0 +1,12 @@
+%h1 Search results
+%p 
+  You searched for
+  %strong= params[:search]
+
+.left
+  %h2 Albums
+  = render :partial => "albums/album", :collection => @album_results
+
+.right
+  %h2 Tracks
+  = render :partial => "albums/track", :collection => @track_results

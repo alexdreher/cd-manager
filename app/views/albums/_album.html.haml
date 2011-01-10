@@ -1,0 +1,7 @@
+.album-item{:class => cycle('even', 'odd')}
+  = image_tag album.cover.url(:thumb), :class => "album_cover"
+  .content
+    %strong= link_to album.title, album
+    %br/
+    %p= "by #{album.artist.name}"
+%hr.space

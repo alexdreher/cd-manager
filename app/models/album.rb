@@ -10,4 +10,10 @@ class Album < ActiveRecord::Base
   has_attached_file :cover, :styles => { :medium => "200x200#", :thumb => "50x50#" }
   
   accepts_nested_attributes_for :tracks, :reject_if => :all_blank
+  
+  # indexes for sphinx
+  define_index do
+    indexes title
+    indexes tracks(:title), :as => :track_title
+  end
 end

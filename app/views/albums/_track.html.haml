@@ -1,0 +1,4 @@
+.track-item{:class => cycle('even', 'odd')}
+  %p
+    %strong= link_to track.title, track.album
+    = "by #{track.artist.name}"

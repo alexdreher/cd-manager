@@ -1,6 +1,6 @@
 .bundle
 db/*.sqlite3
-log/*.log
+log/*
 tmp/**/*
 .DS_Store
 public/stylesheets/compiled/
@@ -8,3 +8,4 @@ db/test.sqlite3-journal
 public/system/
 coverage.data
 coverage/
+db/sphinx/

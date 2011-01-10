@@ -1,6 +1,6 @@
 Feature: Browsing
   In order to view the contents of the site
-  As a (anonymous) user
+  As a (anonymous) user 
   I want to be able to browse the website
   
   Background:
@@ -50,7 +50,6 @@ Feature: Browsing
   Scenario: View an album with track list
     Given I am on on the albums list
     When I follow "A First Album"
-    #Then show me the page
     Then I should see a tracks table
       | First Track  |
       | Second Track |

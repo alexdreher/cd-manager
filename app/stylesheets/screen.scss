@@ -52,4 +52,29 @@ body.two-col {
     // With 24 cols, this is 16.
     $content-columns: ceil(2 * $blueprint-grid-columns / 3);
     // true means it's the last column in the row
-    @include column($content-columns, true); } }
+    @include column($content-columns, true); } 
+  
+  .album-item {
+    @include column(12);
+    .album_cover {
+     @include column(2);
+     border: 1px solid black;
+    }
+    .content {
+      @include column(4);
+    }
+  }
+
+  .left {
+    @include column($blueprint-grid-columns/2);
+  }
+
+  .right {
+    @include column($blueprint-grid-columns/2, true);
+  }
+
+  .odd {
+    background-color: #f3f3f3;
+  }
+    
+}
